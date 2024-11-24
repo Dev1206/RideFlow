@@ -135,18 +135,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
               </button>
             ))}
           </div>
-        </nav>
 
-        {/* Footer with Logout */}
-        <div className="p-4 border-t border-white/10">
-          <button
-            onClick={onLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-indigo-100 hover:bg-white/10 hover:text-white transition-colors"
-          >
-            <RiLogoutCircleFill className="w-5 h-5 text-red-400" />
-            <span className="font-medium">Logout</span>
-          </button>
-        </div>
+          <div className="px-4 space-y-2 mt-5">
+            <button
+              onClick={onLogout}
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-indigo-100 hover:bg-white/10 hover:text-white transition-colors"
+            >
+              <RiLogoutCircleFill className="w-5 h-5 text-red-400" />
+              <span className="font-medium">Logout</span>
+            </button>
+          </div>
+        </nav>
+        
       </div>
 
       {/* Overlay for mobile */}
