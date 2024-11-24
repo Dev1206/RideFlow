@@ -168,8 +168,14 @@ connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     console.log(`Client URL: ${process.env.CLIENT_URL}`);
+    console.log(`MongoDB URI: ${process.env.MONGODB_URI.split('@')[1]}`); // Log URI without credentials
   });
 }).catch(err => {
-  console.error('MongoDB connection error:', err);
+  console.error('MongoDB connection error:',{
+    message: err.message,
+    code: err.code,
+    name: err.name,
+    stack: err.stack
+  });
   process.exit(1);
 });
