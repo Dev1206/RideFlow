@@ -6,7 +6,7 @@ import { ErrorMessage } from '../components/shared/ErrorMessage';
 import { EmptyState } from '../components/shared/EmptyState';
 import { useAsyncData } from '../hooks/useAsyncData';
 import * as api from '../services/api';
-import { FiSearch, FiFilter, FiCalendar, FiMapPin, FiUser, FiPhone, FiTruck,FiFileText, FiClock, FiTrash2, FiCheck, FiChevronDown, FiUserX } from 'react-icons/fi';
+import { FiSearch, FiFilter, FiCalendar, FiMapPin, FiUser, FiPhone, FiTruck, FiClock, FiTrash2, FiCheck, FiChevronDown, FiUserX } from 'react-icons/fi';
 import RidesMap from '../components/RidesMap';
 
 // Add these interfaces at the top of the file
