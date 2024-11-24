@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5001/api';
+const API_URL = 'https://rideflow-vjwk.onrender.com/api';
 
 let authToken: string | null = null;
 
