@@ -347,8 +347,7 @@ export default function ManageRidesPage() {
                       {ride.notes && (
                         <div className="mt-4 pt-4 border-t border-gray-100">
                           <h4 className="text-sm font-medium text-gray-900 mb-2 flex items-center gap-2">
-                            <FiFileText className="w-4 h-4 text-indigo-500" />
-                            Additional Notes
+                            📋 Additional Notes
                           </h4>
                           <p className="text-gray-600 text-sm bg-gray-50 rounded-lg p-3">
                             {ride.notes}
