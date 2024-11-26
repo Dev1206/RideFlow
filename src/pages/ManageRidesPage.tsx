@@ -8,6 +8,8 @@ import { useAsyncData } from '../hooks/useAsyncData';
 import * as api from '../services/api';
 import { FiSearch, FiFilter, FiCalendar, FiMapPin, FiUser, FiPhone, FiTruck, FiClock, FiTrash2, FiCheck, FiChevronDown, FiUserX } from 'react-icons/fi';
 import RidesMap from '../components/RidesMap';
+import { convertTo12Hour, formatDate, getNextDayDate } from '../utils/dateUtils';
+
 
 // Add these interfaces at the top of the file
 interface Driver {
@@ -296,21 +298,12 @@ export default function ManageRidesPage() {
                               <FiCalendar className="w-5 h-5" />
                             </div>
                             <div>
-                              <p className="text-sm text-indigo-600 font-medium">
-                                {new Date(ride.date).toLocaleDateString('en-US', {
-                                  weekday: 'long',
-                                  year: 'numeric', 
-                                  month: 'long',
-                                  day: 'numeric'
-                                })}
+                               <p className="text-sm text-indigo-600 font-medium">
+                               {formatDate(getNextDayDate(ride.date))}
                               </p>
                               <div className="flex items-center gap-1 text-indigo-500">
                                 <FiClock className="w-3 h-3" />
-                                <p className="text-sm">
-                                  {parseInt(ride.time.split(':')[0]) > 11 
-                                    ? `${ride.time} PM`
-                                    : `${ride.time} AM`}
-                                </p>
+                                {convertTo12Hour(ride.time)}
                               </div>
                             </div>
                           </div>
