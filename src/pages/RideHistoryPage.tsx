@@ -52,15 +52,6 @@ export default function RideHistoryPage() {
     statusFilter === 'all' || ride.status === statusFilter
   );
 
-  const formatDateTime = (date: string, time: string) => {
-    try {
-      const parsedDate = parseISO(date);
-      return `${format(parsedDate, 'EEEE, MMMM d, yyyy')} at ${time}`;
-    } catch (error) {
-      return `${date} at ${time}`;
-    }
-  };
-
   return (
     <div className="flex h-screen bg-gray-50">
       <Sidebar onLogout={handleLogout} />
