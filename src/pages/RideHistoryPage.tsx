@@ -7,6 +7,7 @@ import { useAsyncData } from '../hooks/useAsyncData';
 import * as api from '../services/api';
 import { FiClock, FiMapPin, FiCalendar, FiTruck, FiUser, FiPhone, FiFilter } from 'react-icons/fi';
 import { format, parseISO } from 'date-fns';
+import { convertTo12Hour, formatDate, getNextDayDate } from '../utils/dateUtils';
 
 interface Ride {
   _id: string;
@@ -118,7 +119,7 @@ export default function RideHistoryPage() {
                           {ride.status.charAt(0).toUpperCase() + ride.status.slice(1)}
                         </span>
                         <span className="text-white/90 text-sm">
-                          {format(parseISO(ride.date), 'MMM dd, yyyy')}
+                          {format(parseISO(getNextDayDate(ride.date)), 'MMM dd, yyyy')}
                         </span>
                       </div>
                     </div>
@@ -127,7 +128,7 @@ export default function RideHistoryPage() {
                       {/* Date and Time */}
                       <div className="flex items-center gap-3 text-gray-600">
                         <FiCalendar className="w-5 h-5 text-indigo-500" />
-                        <span>{formatDateTime(ride.date, ride.time)}</span>
+                        <span>{formatDate(getNextDayDate(ride.date))} at {convertTo12Hour(ride.time)}</span>
                       </div>
 
                       {/* Locations */}
